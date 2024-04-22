@@ -1,0 +1,53 @@
+.secondary-bg{
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+
+.know-container{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+.know-btn{
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    cursor: pointer;
+}
+
+.arrow-btn{
+    width: 1rem;
+    transition: all 0.25s;
+}
+.know-btn:hover .arrow-btn{
+    transform: translateX(.25rem);
+}
+
+@media (max-width : 700px) {
+    .know-container{
+        top:50%;
+        right:50% ;
+        transform: translateX(50%);
+    }
+    .know-btn{
+        background-color: transparent;
+    }
+}
+@media (max-width : 480px) {
+    .secondary-bg{
+        height: 200px;
+    }
+    .know-container{
+        top:90%
+    }
+}

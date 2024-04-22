@@ -1,0 +1,60 @@
+.label-check {
+    display: none;
+}
+
+.hamburger-label {
+    width: 20px;
+    height: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+.hamburger-label div {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+}
+
+.line1 {
+    transition: all .3s;
+}
+
+.line2 {
+    margin: 7px 0 0 0;
+    transition: 0.3s;
+}
+
+.line3 {
+    margin: 14px 0 0 0;
+    transition: 0.3s;
+}
+
+#label-check:checked + .hamburger-label .line1 {
+    transform: rotate(35deg) scaleX(.55) translate(13px, 0px);
+    border-radius: 50px 50px 50px 0;
+}
+
+#label-check:checked + .hamburger-label .line3 {
+    transform: rotate(-35deg) scaleX(.55) translate(12px, 0px);
+    border-radius: 0 50px 50px 50px;
+}
+
+#label-check:checked + .hamburger-label .line2 {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 20px;
+}
+@media (min-width : 350px) {
+    .container{
+        display: none;
+    }
+}
+@media (max-width:350px) {
+    .container{
+        position: absolute;
+        right: 10px;
+        top:1.5rem ;
+        transform: translateY(-50%);
+    }
+}

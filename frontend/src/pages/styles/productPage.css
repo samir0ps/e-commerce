@@ -1,0 +1,45 @@
+.edit-product-btn {
+    padding: .5rem 3rem .5rem 3rem;
+    background-color: #fff;
+    color: #738290;
+    border: 0;
+    border-radius: 1rem;
+    transition: 0.25s ease-in-out;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer ; 
+    border: 1px solid #738290;
+    
+}
+.delete-product-btn{
+    padding: .5rem 3rem .5rem 3rem;
+    border: 0;
+    border-radius: 1rem;
+    background-color: #fff;
+    color: #b23a48;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 1px solid #b23a48;
+    transition: 0.25s ease-in-out;
+
+
+}
+.edit-product-btn:hover{
+    background-color: #738290;
+    color: white;
+}
+.delete-product-btn:hover{
+    background-color: #b23a48;
+    color: #fff;
+}
+.product-btns{
+    height: 2rem;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}

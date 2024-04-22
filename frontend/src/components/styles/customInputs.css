@@ -1,0 +1,147 @@
+.edit-customs-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    margin: 1rem 0 1rem 0;
+    max-height: 40rem;
+    overflow-y: auto;
+}
+
+.edit-custom-container:nth-child(even){
+    background-color: var(--third);
+    border-bottom: 1px solid var(--primary  );
+    color: var(--primary);
+}
+.edit-custom-container:nth-child(odd){
+    background-color: white;
+    border-bottom:1px solid var(--third)
+}
+.edit-custom-container:last-child{
+    border-bottom: 1px solid black;
+}
+.view-mode-custom{
+    display: flex;
+    justify-content: start;
+    padding-left:1rem ;
+    align-items: center;
+    gap: .25rem;
+    border-right:1px solid var(--primary) ;
+
+    position: relative;
+}
+.custom-inputs-container{
+    width: 100%;
+}
+.edit-icons{
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+.delete-icon-custom{
+    cursor: pointer;
+    visibility: hidden;
+    transition: 0.1s;
+}
+.edit-icon-custom{
+    cursor: pointer;
+    visibility: hidden;
+    transition: 0.2s;
+}
+.view-mode-custom:hover .edit-icon-custom ,.view-mode-custom:hover .delete-icon-custom {
+    visibility: visible;
+}
+
+.view-mode-custom .value{
+    font-size: .8rem;
+    color: var(--secondary);
+}
+.specifications-container h3 {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin-left: 1rem;
+}
+
+.specifications-container button{
+    background-color: white;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    padding: 1rem 2rem 1rem 2rem;
+    float: right;
+    margin-right: 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: 0.2s ;
+}
+.specifications-container button:hover{
+    background-color: var(--secondary);
+    color: white;
+}
+.new-inp{
+    margin-left: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    gap: .25rem;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    padding: .5rem;
+}
+.new-inp input{
+    width: 95%;
+    height: 2rem;
+    border: 0;
+    background-color: rgba(0, 0, 0 , 0.1);
+    padding: .5rem;
+    box-sizing: border-box;
+    border: 1px solid var(--primary);
+    transition: 0.25s;
+    position: relative;
+    border-radius: .5rem;
+}
+.new-inp input:focus{
+    outline: 0;
+    border: 1px solid var(--third);
+}
+.cancel-adding-btn{
+    background-color: #e5383b !important;
+    color: white !important;
+    border: #e5383b !important;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0 , 0.2);
+}
+.cancel-adding-btn:hover{
+    background-color: #ba181b !important;
+}
+.err-p {
+    color: #ba181b;
+    position: absolute;
+    top: -0.7rem;
+    font-size: 10px;
+    z-index: 100;
+
+}
+
+.cancel-editing{
+    font-size: 15px !important;
+    color: #e5383b !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: 0 !important;
+    float: right;
+    bottom: -1rem ;
+}
+.edit-custom-container .new-inp{
+    grid-template-columns: repeat(2 , 1fr) 10% 10%;
+    margin-top: auto;
+    align-items: center;
+    height: 100%;
+    padding: 0 .5rem 0 .5rem;
+}
+
+.edit-custom-container:nth-child(even) .new-inp input{
+    background-color: black;
+    color: var(--primary);
+}
+.save-edit{
+    color: var(--secondary) !important;
+}

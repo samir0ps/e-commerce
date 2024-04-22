@@ -1,0 +1,493 @@
+
+
+.link-editor .link-view {
+    display: block;
+    width: calc(100% - 24px);
+    margin: 8px 12px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #050505;
+    border: 0;
+    outline: 0;
+    position: relative;
+    font-family: inherit
+}
+
+.link-editor .link-view a {
+    display: block;
+    word-break: break-word;
+    width: calc(100% - 33px)
+}
+
+.link-editor div.link-edit {
+    background-image: url(/assets/pencil-fill.633b2c8d.svg);
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    vertical-align: -.25em;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+    cursor: pointer
+}
+
+.link-editor div.link-trash {
+    background-image: url(/assets/trash.e93c6b1b.svg);
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    vertical-align: -.25em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer
+}
+
+.link-editor div.link-cancel {
+    background-image: url(/assets/close.5a175ff6.svg);
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    vertical-align: -.25em;
+    margin-right: 28px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer
+}
+
+.link-editor div.link-confirm {
+    background-image: url(/assets/success-alt.33b01110.svg);
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    vertical-align: -.25em;
+    margin-right: 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer
+}
+
+.link-editor .link-input a {
+    color: #216fdb;
+    text-decoration: underline;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 30px;
+    text-overflow: ellipsis
+}
+
+.link-editor .link-input a:hover {
+    text-decoration: underline
+}
+
+.link-editor .font-size-wrapper,.link-editor .font-family-wrapper {
+    display: flex;
+    margin: 0 4px
+}
+
+.link-editor select {
+    padding: 6px;
+    border: none;
+    background-color: #00000013;
+    border-radius: 4px
+}
+
+.mention:focus {
+    box-shadow: #b4d5ff 0 0 0 2px;
+    outline: none
+}
+
+.characters-limit {
+    color: #888;
+    font-size: 12px;
+    text-align: right;
+    display: block;
+    position: absolute;
+    left: 12px;
+    bottom: 5px
+}
+
+.characters-limit.characters-limit-exceeded {
+    color: red
+}
+
+.dropdown {
+    z-index: 100;
+    display: block;
+    position: fixed;
+    box-shadow: 0 12px 28px #0003,0 2px 4px #0000001a,inset 0 0 0 1px #ffffff80;
+    border-radius: 8px;
+    min-height: 40px;
+    background-color: #fff
+}
+
+.dropdown .item {
+    margin: 0 8px;
+    padding: 8px;
+    color: #050505;
+    cursor: pointer;
+    line-height: 16px;
+    font-size: 15px;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 0;
+    max-width: 250px;
+    min-width: 100px
+}
+
+.dropdown .item.fontsize-item,.dropdown .item.fontsize-item .text {
+    min-width: unset
+}
+
+.dropdown .item .active {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-size: contain
+}
+
+.dropdown .item:first-child {
+    margin-top: 8px
+}
+
+.dropdown .item:last-child {
+    margin-bottom: 8px
+}
+
+.dropdown .item:hover {
+    background-color: #eee
+}
+
+.dropdown .item .text {
+    display: flex;
+    line-height: 20px;
+    flex-grow: 1;
+    min-width: 150px
+}
+
+.dropdown .item .icon {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    user-select: none;
+    margin-right: 12px;
+    line-height: 16px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.dropdown .divider {
+    width: auto;
+    background-color: #eee;
+    margin: 4px 8px;
+    height: 1px
+}
+
+@media screen and (max-width: 1100px) {
+    .dropdown-button-text {
+        display:none!important
+    }
+
+    .dialog-dropdown>.dropdown-button-text {
+        display: flex!important
+    }
+
+    .font-size .dropdown-button-text,.code-language .dropdown-button-text {
+        display: flex!important
+    }
+}
+
+.icon.paragraph {
+    background-image: url(/assets/text-paragraph.f17ec370.svg)
+}
+
+.icon.h1 {
+    background-image: url(/assets/type-h1.83dd5e3b.svg)
+}
+
+.icon.h2 {
+    background-image: url(/assets/type-h2.bb6b6d69.svg)
+}
+
+.icon.h3 {
+    background-image: url(/assets/type-h3.27eb870e.svg)
+}
+
+.icon.h4 {
+    background-image: url(/assets/type-h4.b9ba31db.svg)
+}
+
+.icon.h5 {
+    background-image: url(/assets/type-h5.f6d2d205.svg)
+}
+
+.icon.h6 {
+    background-image: url(/assets/type-h6.34dc2c46.svg)
+}
+
+.icon.bullet-list,.icon.bullet {
+    background-image: url(/assets/list-ul.d6a7f4ba.svg)
+}
+
+.icon.check-list,.icon.check {
+    background-image: url(/assets/square-check.f4543561.svg)
+}
+
+.icon.numbered-list,.icon.number {
+    background-image: url(/assets/list-ol.03c2349b.svg)
+}
+
+.icon.quote {
+    background-image: url(/assets/chat-square-quote.11c47cee.svg)
+}
+
+.icon.code {
+    background-image: url(/assets/code.211c00f3.svg)
+}
+
+.switches {
+    z-index: 6;
+    position: fixed;
+    left: 10px;
+    bottom: 70px;
+    animation: slide-in .4s ease
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translate(-200px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+.switch {
+    display: block;
+    color: #444;
+    margin: 5px 0;
+    background-color: #eeeeeeb3;
+    padding: 5px 10px;
+    border-radius: 10px
+}
+
+#rich-text-switch {
+    right: 0
+}
+
+#character-count-switch {
+    right: 130px
+}
+
+.switch label {
+    margin-right: 5px;
+    line-height: 24px;
+    width: 100px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.switch button {
+    background-color: #ced0d4;
+    height: 24px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    width: 44px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background-color .1s;
+    border: 2px solid transparent
+}
+
+.switch button:focus-visible {
+    border-color: #00f
+}
+
+.switch button span {
+    top: 0px;
+    left: 0px;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    transition: transform .2s
+}
+
+.switch button[aria-checked=true] {
+    background-color: #1877f2
+}
+
+.switch button[aria-checked=true] span {
+    transform: translate(20px)
+}
+
+ span.editor-image {
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    user-select: none
+}
+
+ .editor-image img {
+    max-width: 100%;
+    cursor: default
+}
+
+ .editor-image img.focused {
+    outline: 2px solid rgb(60,132,244);
+    user-select: none
+}
+
+ .editor-image img.focused.draggable {
+    cursor: grab
+}
+
+ .editor-image img.focused.draggable:active {
+    cursor: grabbing
+}
+
+.editor-image .image-caption-container .tree-view-output {
+    margin: 0;
+    border-radius: 0
+}
+
+.editor-image .image-caption-container {
+    display: block;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #fff;
+    background-color: #ffffffe6;
+    min-width: 100px;
+    color: #000;
+    overflow: hidden
+}
+
+.editor-image .image-caption-button {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 30%;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 5px;
+    background-color: #00000080;
+    min-width: 100px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none
+}
+
+ .editor-image .image-caption-button:hover {
+    background-color: #3c84f480
+}
+
+ .editor-image .image-edit-button {
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 5px;
+    background-image: url(/assets/pencil-fill.633b2c8d.svg);
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    vertical-align: -.25em;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    cursor: pointer;
+    user-select: none
+}
+
+ .editor-image .image-edit-button:hover {
+    background-color: #3c84f41a
+}
+
+ .editor-image .image-resizer {
+    display: block;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    background-color: #3c84f4;
+    border: 1px solid #fff
+}
+
+ .editor-image .image-resizer.image-resizer-n {
+    top: -6px;
+    left: 48%;
+    cursor: n-resize
+}
+
+ .editor-image .image-resizer.image-resizer-ne {
+    top: -6px;
+    right: -6px;
+    cursor: ne-resize
+}
+
+ .editor-image .image-resizer.image-resizer-e {
+    bottom: 48%;
+    right: -6px;
+    cursor: e-resize
+}
+
+ .editor-image .image-resizer.image-resizer-se {
+    bottom: -2px;
+    right: -6px;
+    cursor: nwse-resize
+}
+
+ .editor-image .image-resizer.image-resizer-s {
+    bottom: -2px;
+    left: 48%;
+    cursor: s-resize
+}
+
+ .editor-image .image-resizer.image-resizer-sw {
+    bottom: -2px;
+    left: -6px;
+    cursor: sw-resize
+}
+
+ .editor-image .image-resizer.image-resizer-w {
+    bottom: 48%;
+    left: -6px;
+    cursor: w-resize
+}
+
+ .editor-image .image-resizer.image-resizer-nw {
+    top: -6px;
+    left: -6px;
+    cursor: nw-resize
+}

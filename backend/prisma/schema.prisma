@@ -1,0 +1,256 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id String @id 
+  firstName String @db.VarChar(255)
+  lastName String @db.VarChar(255)
+  email String @unique @db.VarChar(255)
+  password String @unique @db.VarChar(255)
+  role Role @default(USER)
+  createdAt DateTime @default(now())
+  trader Trader?
+  ban BannedUser?
+  images UserImage[]
+  notifications Notification[]
+  reviews Review[]
+  cart Cart?
+  order Order[]
+  favourites Favourites[]
+  addresses Addresses[] 
+  verified Boolean @default(false)
+}
+model Trader{
+  id String @id 
+  traderId String @unique
+  product Product[]
+  createdAt DateTime @default(now())
+  trader User @relation(fields: [traderId] , references: [id])
+  
+}
+model BannedUser{
+  id String @id
+  userId String @unique
+  reason String 
+  createdAt DateTime @default(now())
+  user User? @relation(fields: [userId] , references: [id])
+
+}
+model UserImage{
+  id String @id 
+  url String
+  userId String 
+  user User? @relation(fields: [userId] , references: [id])
+  createdAt DateTime @default(now())
+}
+model Notification{
+  id String @id 
+  title String 
+  content String
+  userId String 
+  user User @relation(fields: [userId] , references: [id])
+  createdAt DateTime @default(now())
+}
+enum Role {
+  USER
+  MODERATOR
+  ADMIN
+}
+model Addresses {
+  id String @id
+  address String 
+  userId String
+  user User @relation(fields: [userId] , references: [id])
+}
+model Product{
+  id String @id
+  traderId String
+  name String @db.VarChar(255)
+  price Float 
+  details ProductDetail[]
+  description ProductDescription[]
+  preview ProductPreview?
+  reviews Review[]
+  categories CategoriesOnProducts[]
+  tags TagsOnProducts[]
+  cartItem CartItem[]
+  orderItem OrderItem[]
+  favourites Favourites[]
+  newArrival ProductsOnNewArrival[]
+  createdAt DateTime @default(now())
+  discount Int @default(0)
+  countInStock Int 
+  productSwipers ProductOnSwiper[]
+  rating Float @default(0)
+  colors Color[]
+  images productImage[]
+  trader Trader @relation(fields: [traderId] , references: [id])
+}
+
+
+
+model ProductDetail{
+  id String @id 
+  name String @db.VarChar(255)
+  value String @db.VarChar(255)
+  productId String 
+  product Product @relation(fields: [productId] , references: [id])
+}
+
+model ProductDescription{
+  id String @id 
+  content String 
+  productId String 
+  product Product @relation(fields: [productId] , references: [id])
+}
+model ProductPreview{
+  id String @id 
+  content String 
+  productId String @unique
+  product Product @relation(fields: [productId] , references: [id])
+}
+model Review {
+  id String @id 
+  rating Int
+  content String @db.VarChar(255)
+  userId String 
+  productId String 
+  product Product @relation(fields: [productId] , references: [id])
+  user User @relation(fields: [userId] , references: [id])
+  createdAt DateTime @default(now())
+}
+model Category{
+  id String @id 
+  name String @db.VarChar(255) @unique
+  products CategoriesOnProducts[]
+  image CategoriesImages[]
+  createdAt DateTime @default(now())
+  suggested SuggestedCategories?
+}
+model CategoriesImages{
+  id String @id
+  url String 
+  categoryId String 
+  category Category @relation(fields: [categoryId] , references: [id])
+}
+model Tag{
+  id String @id 
+  name String 
+  product TagsOnProducts[]
+}
+model CartItem {
+  id String @id 
+  productId String 
+  cartId String
+  cart Cart @relation(fields: [cartId] , references: [id])
+  quantity Int
+  product Product @relation(fields: [productId] , references: [id])
+  price Float
+}
+model Cart {
+  id String @id 
+  userId String @unique
+  cartItems CartItem[]
+  user User @relation(fields: [userId] , references: [id])
+  totalQuantity Int @default(0)
+  totalPrice Float @default(0)
+}
+model OrderItem {
+  id String @id
+  productId String 
+  product Product @relation(fields: [productId] , references: [id])
+  orderId String 
+  order Order @relation(fields: [orderId] ,references: [id])
+  quantity Int 
+  price Float
+}
+model Order {
+  id String @id 
+  userId String 
+  user User @relation(fields: [userId] , references: [id])
+  orderItem OrderItem[]
+  totalPrice Float
+  quantity Int
+  address String @db.VarChar(255)
+  paymentMethod String @default("cash")
+  paymentStatus String @default("pending")
+  createdAt DateTime @default(now())
+  TimeArrival DateTime 
+
+}
+model CategoriesOnProducts{
+  product Product @relation(fields: [productId] , references: [id])
+  category Category @relation(fields:[categoryId] , references:[id])
+  productId String 
+  categoryId String
+  createdAt DateTime @default(now())
+  @@id([categoryId , productId])
+}
+model TagsOnProducts{
+  product Product @relation(fields: [productId] , references: [id])
+  tag Tag @relation(fields:[TagId] , references:[id])
+  productId String 
+  TagId String
+  createdAt DateTime @default(now())
+  @@id([TagId , productId])
+}
+model Favourites{
+  product Product @relation(fields: [productId] , references: [id])
+  user User @relation(fields: [userId] , references: [id])
+  userId String
+  productId String
+  @@id([productId , userId])
+}
+model SuggestedCategories {
+  categoryId String
+  category Category @relation(fields: [categoryId] , references: [id])
+  @@id([categoryId])
+}
+model ProductsOnNewArrival{
+  productId String 
+  NewArrivalId String
+  product Product @relation(fields: [productId] , references: [id])
+  newArrival NewArrival @relation(fields: [NewArrivalId] , references: [id])
+  @@id([productId , NewArrivalId])
+}
+model NewArrival {
+  id String @id
+  product ProductsOnNewArrival[]
+}
+model ProductOnSwiper {
+  productId String 
+  productSwiperId String 
+  products Product @relation(fields: [productId] , references: [id])
+  productSwiper ProductsSwiper @relation(fields: [productSwiperId] , references: [id])
+  @@id([productId , productSwiperId])
+}
+model ProductsSwiper{
+  id String @id
+  title String 
+  products ProductOnSwiper[]
+}
+model Color{
+  id String @id
+  name String
+  image ColorImage[]
+  productId String 
+  product Product @relation(fields: [productId] , references: [id])
+
+}
+model ColorImage {
+  id String @id 
+  url String @unique
+  colorId String 
+  color Color @relation(fields: [colorId] , references: [id])
+}
+model productImage {
+  id String @id 
+  url String
+  productId String
+  product Product @relation(fields: [productId] , references: [id])
+}

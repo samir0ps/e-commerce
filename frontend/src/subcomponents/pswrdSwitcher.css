@@ -1,0 +1,53 @@
+:root{
+    --dark-bg-color : #4A5043 ; 
+    --light-bg-color : #e5e5e5 ; 
+    --dark-content-color : #FFCB47 ; 
+    --dark-content-hover-color : #FFD058 ; 
+    --light-content : #023047 ; 
+    --dark-secondary-content : #8AA1B1 ; 
+    --light-secondary-content : #e9edc9 ;
+    --light-content-hover-color : #8AA1B1 ; 
+}
+.checkbox-wrapper input[type="checkbox"] {
+    display: none;
+}
+.checkbox-wrapper{
+    width: max-content;
+    height: max-content;
+}
+
+.checkbox-wrapper .terms-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-wrapper .terms-label .label-text {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.checkbox-wrapper .checkbox-svg {
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-wrapper .checkbox-box {
+    fill: rgba(207, 205, 205, 0.425);
+    stroke: var(--dark-bg-color);
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    transition: stroke-dashoffset 0.6s ease-in;
+}
+
+.checkbox-wrapper .checkbox-tick {
+    stroke: var(--dark-bg-color);
+    stroke-dasharray: 172;
+    stroke-dashoffset: 172;
+    transition: stroke-dashoffset 0.6s ease-in;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-box,
+    .checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-tick {
+    stroke-dashoffset: 0;
+}  

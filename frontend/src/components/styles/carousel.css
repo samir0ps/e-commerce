@@ -1,0 +1,122 @@
+:root {
+    --dark-bg-color: #4A5043;
+    --light-bg-color: #e5e5e5;
+    --dark-content-color: #FFCB47;
+    --dark-content-hover-color: #FFD058;
+    --light-content: #023047;
+    --dark-secondary-content: #8AA1B1;
+    --light-secondary-content: #e9edc9;
+    --light-content-hover-color: #8AA1B1;
+
+}
+.swiper-products{
+    width: 90%;
+    position: relative;
+    height: 15rem;
+    padding: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2%;
+    transition: all 0.25s;
+    overflow: hidden;
+
+}
+
+.next-arrow{
+    width: 3rem;
+    height: 5rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    border-radius: 1rem;
+}
+.prev-arrow{
+    width: 3rem;
+    height: 5rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    border-radius: 1rem;
+}
+.next-icon{
+    width: 3rem;
+    height: 3rem;
+    color: black;
+}
+.prev-icon{
+    width: 3rem;
+    height: 3rem;
+    color: black;
+}
+.swiper-slide-products{
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    
+}
+.swiper-slide-products img{
+    object-fit: contain ;
+    width: 100% !important;
+    height: 100% !important;
+}
+.arrow{
+    scale: 0;
+    opacity: 0;
+    transition: all 0.25s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.3);
+}
+.carousel-title{
+    width: 50%;
+    height: 2rem;
+    border-radius: .5rem;
+    border: 1px solid var(--primary);
+    transition: 0.1s ease;
+    padding-left: 1rem;
+    box-sizing: border-box;
+    }
+
+.swiper:hover .arrow{
+    scale: 1;
+    opacity: 1;
+}
+.carousel-title:focus{
+    outline: 0;
+    border: 1px solid var(--third);
+}
+
+@media (max-width:1000px) {
+    .swiper{
+        height: 15rem;
+    }
+    .next-arrow , .prev-arrow{
+        width: 2rem;
+    }
+}
+
+@media (max-width:800px) {
+    .swiper{
+        height: 12rem;
+        gap: 1rem;
+    }
+    .next-arrow , .prev-arrow{
+        width: 2rem;
+    }
+}

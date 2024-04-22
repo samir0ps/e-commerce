@@ -1,0 +1,28 @@
+:root{
+    --dark-bg-color : #4A5043 ; 
+    --light-bg-color : #e5e5e5 ; 
+    --dark-content-color : #FFCB47 ; 
+    --dark-content-hover-color : #FFD058 ; 
+    --light-content : #023047 ; 
+    --dark-secondary-content : #8AA1B1 ; 
+    --light-secondary-content : #e9edc9 ;
+    --light-content-hover-color : #8AA1B1 ; 
+}
+.cart-svg {
+    transform: translateY(-60px);
+    padding: 5px;
+    position: relative;
+}
+@media (max-width:720px) {
+    .cart-svg{
+        transform: translateY(-35%);
+        
+    }
+}
+
+@media (max-width:650px) {
+    .cart-svg{
+        display: none;
+        
+    }
+}

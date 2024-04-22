@@ -1,0 +1,119 @@
+.create-carousel-container{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.create-carousel-container button{
+    color: var(--secondary);
+    border: var(--secondary) 1px solid;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+}
+.create-carousel-container h3{
+    color: var(--secondary);
+    font-size: 1.5rem;
+}
+.create-carousel-form{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create-carousel-form .form-container{
+    width: 80%;
+    height: 90%;
+    border-radius: 2rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.close-form-btn{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border-radius: 50% !important;
+    background-color: black !important;
+}
+.add-products-container{
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    box-sizing: border-box;
+    padding: 1rem;
+    gap: 1rem;
+}
+.all-products{
+    width: 90%;
+    max-height: 50%;
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    overflow-y:auto ;
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    gap: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.all-products::-webkit-scrollbar-button{
+    display: none;
+}
+.all-products::-webkit-scrollbar{
+    width: 5px;
+    
+}
+.all-products::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.added-products{
+    width: 90%;
+    height: 40%;
+    overflow-y: auto;
+}
+.product-ad-container{
+    width: 100%;
+    height: 3rem;
+    background-color: white;
+    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    padding: .5rem;
+    gap: 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.product-ad-container img{
+    width: 2.5rem;
+    object-fit: contain;
+    height: 2.5rem;
+}
+.product-ad-container p{
+    width: 10rem;
+    overflow: hidden;
+    color: var(--secondary);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.product-ad-container button{
+    height: 2rem;
+    padding: 0;
+    width: 5rem;
+}

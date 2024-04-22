@@ -1,0 +1,146 @@
+.tags-container{
+    width: 100%;
+    height: 10rem;
+    
+}
+
+.add-tag{
+    background-color: white;
+    border: var(--primary);
+    border-radius: .5rem;
+}
+
+.cls-wrapper{
+    visibility: hidden;
+}
+.opn-wrapper{
+    visibility: visible;
+}
+
+.add-tags-wrapper{
+    display: flex;
+    justify-content: center ; 
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    position: fixed;
+    transition: 0.25s ease-in-out;
+}
+.add-tags-container{
+    background-color: white;
+    width: max-content;
+    height: max-content;
+    padding: 5rem 2rem 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3rem;
+    transition: 0.25s ease-in-out;
+}
+.close-add{
+    scale: 0;
+}
+.open-add{
+    scale: 1;
+}
+.add-tag-inp{
+    width: 15rem;
+    border: 1px solid var(--primary);
+    height: 3rem;
+    border-radius: .5rem;
+    outline: none;
+    padding-left: 1rem;
+}
+.add-tag-button{
+    background-color: transparent;
+    font-size: 16px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    border: 0;
+    cursor: pointer;
+    width: max-content;
+    margin: 2rem auto 0 auto;
+}
+.add-tags-bg{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.tags-selection {
+    width: 100%;
+    overflow: visible;
+    height: auto;
+}
+.tags-selection .select{
+    width: 100%;
+    height: 2rem;
+    border-radius: .5rem;
+    padding: 0;
+    box-shadow: none;
+    background-color: white;
+    border: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.select-inp{
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary);
+    box-shadow: 0;
+    outline: 0;
+    border-radius: .5rem;
+    padding-left: 1rem;
+}
+
+.chevrons-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: .5rem;
+    padding: .25rem;
+    font-size: 9px;
+}
+
+.options{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: max-content;
+    max-height: 10rem;
+    transition: 0.25s ease-in-out;
+    z-index: 100;
+    opacity: 1;
+    transform: none;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.open-options{
+    visibility: visible;
+    scale: 1;
+}
+.close-options{
+    visibility: hidden;
+    scale: 0;
+    transition-delay: 0.2s;
+}
+.options .option{
+    padding: .25rem;
+    margin: 0;
+}
+
+.options .option:hover{
+    background-color: var(--primary);
+}
+
+.admin-Tags-container .search-inp{
+    height: 3rem;
+    margin-bottom: 1rem;
+}

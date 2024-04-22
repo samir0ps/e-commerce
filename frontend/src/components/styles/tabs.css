@@ -1,0 +1,235 @@
+#root{
+        --dark-bg-color : #4A5043 ; 
+        --light-bg-color : #e5e5e5 ; 
+        --dark-content-color : #FFCB47 ; 
+        --dark-content-hover-color : #FFD058 ; 
+        --light-content : #023047 ; 
+        --dark-secondary-content : #8AA1B1 ; 
+        --light-secondary-content : #e9edc9 ;
+        --light-content-hover-color : #8AA1B1 ; 
+}
+.tabs-container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.tabs-headers , .tabs-headers-second{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    position: relative;
+
+}
+.tab-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--third);
+    z-index: -1;
+    cursor: pointer;
+    height: 3rem;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+.tabCheck{
+    display: none;
+}
+
+.glider{
+    width: calc((1/3)*100%);
+    height: 80%;
+    border-radius: .25rem;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top:.25rem ; 
+    left: 0rem;
+    transition: 0.25s ease-out;
+    z-index: -1;
+    background-color: var(--third);
+
+
+}
+
+
+
+.tab-header{
+    transition: color 0.25s ease-in-out;
+}
+.tab-content-container{
+    width: 100%;
+    border-top: 2px solid var(--third) ;
+    
+}
+.about-product{
+    width: 99%;
+    margin: auto;
+}
+.about-product .tabs-headers-second{
+    grid-template-columns: repeat(2 , 1fr);
+    width: 50%;
+    margin-left: 5rem;
+    
+}
+.about-product  .glider{
+    width: 50%;
+    height: 90%;
+    border-radius: 99999px;
+}
+
+.about-product input[id="tab-reviews"]:checked ~ .glider{
+    transform:   translateX(0rem);
+}
+.about-product input[id="tab-description"]:checked ~ .glider{
+    transform: translateX(100%);
+}
+.about-product hr{
+    width: 90%;
+    margin: 1rem auto 1rem auto;
+}
+.back-tab{
+    opacity: 0;
+    transition: 0.1s;
+}
+.tab-content-container{
+    position: relative;
+}
+.details-tab{
+    transition: 0.4s ease-out;
+    width: 100%;
+    display: table;
+}
+.front-tab{
+    transition: 0.4s ease-out;
+    transition-delay: 0.2s;
+}
+.categories-tab , .tags-tab{
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.category-badge , .product-tag{
+    padding: .5rem 1rem .5rem 1rem;
+    background-color: var(--third);
+    color: var(--primary);
+    border-radius: 999px;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+	width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+.min-table{
+    height: 6.2em ;
+}
+
+.tr {
+	display: table-row;
+}
+.tbody {
+	display: table-row-group;
+    width: 100%;
+    max-width: 100%;
+}
+
+.td {
+	width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.tr{
+    border-bottom: 1px solid var(--third);
+    display: flex;
+    padding: .25rem;
+}
+.td-1{
+    display: flex;
+	width: 50%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    color: #023047;
+}
+.td {
+    color: #4A5043;
+    font-size: 12px;
+    display: flex;
+    overflow: hidden;
+    max-width: 100%;
+}
+.gradient-effect{
+    height: 2rem;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, transparent 100%);
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    gap: .25rem;
+    cursor: pointer;
+    color: #023047;
+}
+.top-full{
+    display: flex;
+}
+.bottom-0{
+    position: absolute;
+    bottom:0;
+}
+
+@keyframes drop {
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+.table{
+    margin: auto;
+    padding: 0;
+    border: none;
+
+}
+.tr:nth-child(odd){
+    background-color: rgba(205, 180, 219, 0.3);
+}
+
+@media (max-width:1250px) {
+    .tab-header{
+        font-size: 12px;
+    }
+}
+@media (max-width : 900px) {
+    .tab-header{
+        font-size: 15px;
+    }
+}
+@media (max-width : 600px) {
+    .tabs-container{
+        padding: 0;
+    }
+    .tab-header{
+        font-size: 10px;
+    }
+}

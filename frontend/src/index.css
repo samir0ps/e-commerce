@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth ;
+}   
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: transparent;
+    box-shadow: -2px -2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb{
+    width: 5px;
+    margin: auto;
+    background: #0d1321;
+}
+::-webkit-scrollbar-button:vertical {
+    background-repeat: no-repeat;   
+    background-size: 100%;
+    background-position: center;
+    height: 15px;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' fill='black' viewBox='0 0 256 256'%3E%3Cpath stroke='20' d='M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z'%3E%3C/path%3E%3C/svg%3E");   
+}
+::-webkit-scrollbar-button:increment {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' fill='black' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E"); 
+}
+button{
+    transition: box-shadow 0.25s ease-in;
+}
+button:active{
+    box-shadow: 0 0 0 1px rgba(189, 224, 254 , 0.3);
+}
